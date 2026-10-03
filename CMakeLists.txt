@@ -13,6 +13,7 @@ add_executable(relaychat-server
     src/main.cpp
     src/Server.cpp
     src/Client.cpp
+    src/Eventcpp
 )
 
 target_include_directories(relaychat-server

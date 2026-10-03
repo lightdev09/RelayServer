@@ -39,6 +39,7 @@ Makefile
 # ==============================
 gdb_history.txt
 *.dSYM/
+tech/
 
 # ==============================
 # IDEs / Editors

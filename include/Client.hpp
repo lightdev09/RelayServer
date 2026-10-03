@@ -2,10 +2,10 @@
 #include <string>
 #include <string_view>
 #include <unistd.h>
-enum class STATE { WAITING, ACTIVE, DISCONNECTED };
+enum class STATE { ONLINE, OFFLINE };
 class Client {
 private:
-  STATE ClientState = STATE::WAITING;
+  STATE ClientState = STATE::OFFLINE;
   std::string Address = "Unknown";
   std::string Username = "Unknown";
   unsigned id{}; // Might be usefull for multiple user with same name
@@ -19,6 +19,7 @@ public:
   Client(std::string_view add, std::string_view username, int fd)
       : Address(add), Username(username), fd(fd) {};
   ~Client(){closeClient();};
+  // Whats the point of coping client ? so screw it
   Client(const Client&) = delete;
   Client& operator=(const Client&) = delete;
   Client(Client&&) = delete;

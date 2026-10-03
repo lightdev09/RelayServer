@@ -7,5 +7,5 @@ void Client::closeClient()
         close(fd);
         fd = -1;
     }
-    ClientState = STATE::DISCONNECTED;
+    ClientState = STATE::OFFLINE;
 }
